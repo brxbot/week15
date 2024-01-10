@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>My wishlist</h1>
+        <form action="/wish" method="POST" enctype="multipart/form-data">   
+            <input type="text" name = "userWish" placeholder="add a wish">
+            <input type="file" name="userFile" >
+            <button type="submit">Add a wish</button>
+            
+        </form>
+
+        <div class="wishlist">
+            <ul>
+                <% for(let i = 0; i < myWishes.length; i ++ ) { %>
+                    <li> <img src="<%= myWishes[i].imageUrl %>" alt=""> <%= myWishes[i].description %> </li>
+                <% } %>
+            </ul>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
